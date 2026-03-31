@@ -1,5 +1,5 @@
 body {
-    width: 100vw;
+    width: 100%;
     margin:0;
     background: lightgrey;
     display: flex;
@@ -17,6 +17,56 @@ img {
     width:450px;
     height: auto;
 }
+.avatar-selector {
+    position: relative;
+    width: 100px;
+    margin: 0 auto 20px;
+}
+
+.avatar-actual {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    border: 3px solid #142167;
+}
+
+.avatar-actual img {
+    width: 100%;
+    height: 100%;
+}
+
+/* El menú de opciones */
+.avatar-opciones {
+    display: none; /* Se oculta al principio */
+    position: absolute;
+    top: 110px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.avatar-opciones.active {
+    display: flex; /* Se muestra cuando añadimos la clase 'active' */
+    gap: 10px;
+}
+
+.option {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.option:hover {
+    transform: scale(1.1);
+    border: 2px solid #2a72a1;
+}
 input{
     height: 30px;
     border-radius: 10px;
@@ -25,7 +75,7 @@ input{
     padding-left: 10px;
     font-family: 'Inter', sans-serif;
 }
-#btn-login{
+#btn-crearcuenta{
     margin-top: 20px;
     height: fit-content;
     width: fit-content;
@@ -39,11 +89,12 @@ input{
 }
 
 span {
-    margin-top: 70px;
+    margin-top: 50px;
+    margin-bottom: 30px;
 }
 
 footer{
-    position: absolute;
+    position: relative;
     bottom: 0;
     left: 0;
     width: 100%;

@@ -4,16 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/login.css">
     
 </head>
 <body>
+    <img src="assets/logo/logo.png" alt="Logo de StudyGrid">
     <form>
+        <h3>Nombre de usuario</h3>  
         <input type="text" id="username" placeholder="Nombre de usuario" required>
+        <h3>Contraseña</h3>
         <input type="password" id="password" placeholder="Contraseña" required>
-        <span>¿No tienes una cuenta? <a href="crear-cuenta.html">Crear cuenta</a></span>
         <button type="submit" id="btn-login" onclick="login()">Iniciar Sesión</button>
     </form>
+    <span>¿No tienes una cuenta? <a href="crear-cuenta.html">Crear cuenta</a></span>
+    <footer>
+        <h2>Desarrollo: <a href="https://github.com/gasparmartinez-dev">gasparmartinez-dev</a></h2>
+        <h2>Contacto: gasparmartinez.dev@gmail.com</h2>
+    </footer>
     <script src="js/login.js"></script>
 </body>
 </html>
