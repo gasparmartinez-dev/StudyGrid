@@ -14,11 +14,19 @@ window.addEventListener('DOMContentLoaded', () => {
     username.textContent = nombre;
 })
 
-function agregarAsignatura(){
-    //Capturar el nombre de la tarea
+const btnNuevaAsginatura = document.getElementById('addAsignatura');
+const listaAsignaturas = document.getElementById('listaAsignaturas');
 
-    const listaAsignaturas = document.getElementById('listaAsignaturas');
-    const nuevo_li = document.createElement('li');
+btnNuevaAsginatura.addEventListener('click', () => {
+    const nombreAsignatura = prompt("Indica el nombre de la asignatura:");
 
-    nuevo_li.classList.add('asignatura');
-}
+    if(nombreAsignatura){
+        const nuevaAsignatura = document.createElement('li');
+        nuevaAsignatura.textContent = nombreAsignatura;
+        nuevaAsignatura.classList.add('asignatura');
+        listaAsignaturas.appendChild(nuevaAsignatura);
+    }
+    else{
+        alert("Debes introducir un nombre para la asignatura");
+    }
+});
