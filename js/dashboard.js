@@ -13,3 +13,12 @@ window.addEventListener('DOMContentLoaded', () => {
     }
     username.textContent = nombre;
 })
+
+function agregarAsignatura(){
+    //Capturar el nombre de la tarea
+
+    const listaAsignaturas = document.getElementById('listaAsignaturas');
+    const nuevo_li = document.createElement('li');
+
+    nuevo_li.classList.add('asignatura');
+}
