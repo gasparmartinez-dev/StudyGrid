@@ -49,17 +49,40 @@
         </header>
     
         <div id="panel">
-            <div class="fila1 caja">1</div>
-            <div class="fila1 caja">2</div>
-            <div class="resto caja">3</div>
-            <div class="resto caja">4</div>
-            <div class="resto caja">5</div>
-            <div class="resto caja">6</div>
-            <div class="resto caja">7</div>
-            <div class="resto caja">8</div>
+            <div class="fila1 caja">PRÓXIMO PROYECTO</div>
+            <div class="fila1 caja">ESTADÍSTICAS DE LA SEMANA</div>
+            <div class="resto caja">LISTA DE PROYECTOS</div>
+            <div class="resto caja">
+                <div class="cabecera">
+                    <h2>LISTA DE TAREAS</h2>
+                    <button id="btn-crearTarea">Crear tarea</button>
+                </div>
+                <ul>
+                    <li id="listaTareas">
+
+                    </li>
+                </ul>
+            </div>
+            <div class="resto caja">LISTA DE EXÁMENES</div>
+            <div class="resto caja">TEMPORIZADOR</div>
+            <div class="resto caja">RACHA DE ESTUDIO</div>
+            <div class="resto caja">NOTAS + FRASE</div>
         </div>
 
     </main>
+
+    <div id="modalTarea" class="modal-oculto">
+        <div class="contenido-modal">
+            <h3>Nueva tarea</h3>
+            <input type="text" id="inputNombreTarea" placeholder="Nombre de la tarea">
+            <input type="date" id="inputFechaTarea">
+
+            <div class="botones-modal-tarea">
+                <button id="btn-addTarea">Añadir</button>
+                <button id="btn-cancelarTarea">Cancelar</button>
+            </div>
+        </div>
+    </div>
     
     <script src="js/dashboard.js"></script>
 </body>
