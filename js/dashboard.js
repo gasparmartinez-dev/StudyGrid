@@ -50,13 +50,26 @@ btnAddTarea.addEventListener('click', () => {
         const nuevo_li = document.createElement('li');
         nuevo_li.classList.add('tarea');
 
+        const checkbox = document.createElement('input');
+        checkbox.type = "checkbox";
+        checkbox.classList.add('checbox-tarea');
+        checkbox.addEventListener('click', () => {
+            if(checkbox.checked){
+                spanNombre.style.textDecoration = "line-through";
+                spanNombre.style.opacity = "0.5";
+            } else {
+                spanNombre.style.textDecoration = "none";
+                spanNombre.style.opacity = "1";
+            }
+        })
+
         const spanNombre = document.createElement('span');
         spanNombre.textContent = nombre;
-        spanNombre.classList.add('spanTarea');
+        spanNombre.classList.add('nombre-tarea');
 
         const spanFecha = document.createElement('span');
         spanFecha.textContent = fecha;
-        spanNombre.classList.add('spanTarea');
+        spanFecha.classList.add('fecha-tarea');
 
         const papelera = document.createElement('img');
         papelera.src = "assets/icons/trash-negro.png";
@@ -67,6 +80,7 @@ btnAddTarea.addEventListener('click', () => {
             nuevo_li.remove();
         })
 
+        nuevo_li.appendChild(checkbox);
         nuevo_li.appendChild(spanNombre);
         nuevo_li.appendChild(spanFecha);
         nuevo_li.appendChild(papelera);

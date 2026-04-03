@@ -99,13 +99,17 @@ main{
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    height: 100vh;
+    overflow:hidden;
 }
 header{
+    flex-shrink: 0;
     display: flex;
     background-color: yellow;
     width: 100%;
     height: 40px;
     justify-content: space-between;
+    box-sizing: border-box;
 }
 
 #panel{
@@ -126,14 +130,69 @@ header{
 }
 .caja{
     border: 1px solid;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+#listaTareas {
+    flex-grow: 1;
+    height:0;
+    overflow-y: auto;
+    padding-right: 10px;
+    list-style: none;
+    margin:0;
 }
 .cabecera {
     display: flex;
+    width: 100%;
     justify-content: space-between;
+    align-items: center;
     box-sizing: border-box;
     padding-left: 20px;
     padding-right: 20px;
+    flex-shrink: 0;
 }
+
+
+.tarea{
+    color: black;
+    display: flex;
+    margin-bottom: 10px;
+    padding: 0px 20px 0px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+}
+.checbox-tarea{
+    width: 15px;
+    height:15px;
+    margin-right: 10px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+.nombre-tarea{
+    font-weight: 700;
+    flex-grow: 1;
+    font-size: 14px;
+}
+.fecha-tarea{
+    font-weight: 700;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.papelera-tarea{
+    margin-left: 10px;
+    flex-shrink: 0;
+    width:20px;
+    cursor: pointer;
+}
+
 
 
 #modalTarea{
