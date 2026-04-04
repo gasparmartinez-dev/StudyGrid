@@ -105,10 +105,15 @@ main{
 header{
     flex-shrink: 0;
     display: flex;
-    background-color: yellow;
     width: 100%;
     height: 40px;
     justify-content: space-between;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    font-size: 20px;
+    font-weight: 600;
     box-sizing: border-box;
 }
 
@@ -129,15 +134,31 @@ header{
     grid-column: span 2;
 }
 .caja{
-    border: 1px solid;
+    border: 1px solid #BDBDBD;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     height: 100%;
     overflow: hidden;
     box-sizing: border-box;
+    border-radius: 20px;
 }
-
+.btn-add{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #BDBDBD;
+    background: transparent;
+    font-weight: 200;
+    font-size: 14px;
+    padding: 5px 10px 5px 10px;
+    border: 1px solid;
+    border-color: #BDBDBD;
+    border-radius: 30px;
+}
+h2{
+    font-size: 18px;
+}
 #listaTareas {
     flex-grow: 1;
     height:0;
@@ -152,6 +173,7 @@ header{
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
+    padding-top: 10px;
     padding-left: 20px;
     padding-right: 20px;
     flex-shrink: 0;
@@ -159,7 +181,7 @@ header{
 
 
 .tarea{
-    color: black;
+    color: rgb(56, 56, 56);
     display: flex;
     margin-bottom: 10px;
     padding: 0px 20px 0px 20px;

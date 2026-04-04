@@ -1,6 +1,8 @@
 window.addEventListener('DOMContentLoaded', () => {
     const navAvatar = document.getElementById('navAvatar');
     const username = document.getElementById('username-field');
+    const usernameHeader = document.getElementById('nombre');
+    const fecha = document.getElementById('fecha');
 
     const avatarSeleccionado = localStorage.getItem('avatar');
     const nombre = localStorage.getItem('username');
@@ -11,7 +13,16 @@ window.addEventListener('DOMContentLoaded', () => {
     else {
         navAvatar.src = "assets/avatar/default.png";
     }
+    const hoy = new Date();
+    const fechaFormateada = hoy.toLocaleDateString('es-ES', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric'
+    });
+
+    fecha.textContent = fechaFormateada;
     username.textContent = nombre;
+    usernameHeader.textContent = nombre;
 })
 
 const btnNuevaAsginatura = document.getElementById('addAsignatura');
