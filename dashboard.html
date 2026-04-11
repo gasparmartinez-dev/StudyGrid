@@ -51,7 +51,15 @@
         <div id="panel">
             <div class="fila1 caja">PRÓXIMO PROYECTO</div>
             <div class="fila1 caja">ESTADÍSTICAS DE LA SEMANA</div>
-            <div class="resto caja">LISTA DE PROYECTOS</div>
+
+            <div class="resto caja">
+                <div class="cabecera">
+                    <h2>MIS PROYECTOS</h2>
+                    <button class="btn-add" id="btn-crearProyecto">Añadir</button>
+                </div>
+                <ul id="listaProyectos"></ul>
+            </div>
+
             <div class="resto caja">
                 <div class="cabecera">
                     <h2>LISTA DE TAREAS</h2>
@@ -90,27 +98,40 @@
 
     </main>
 
-    <div id="modalTarea" class="modal-oculto">
+    <div id="modalTarea" class="modal modal-oculto">
         <div class="contenido-modal">
             <h3>Nueva tarea</h3>
             <input type="text" id="inputNombreTarea" placeholder="Nombre de la tarea">
             <input type="date" id="inputFechaTarea">
 
-            <div class="botones-modal-tarea">
+            <div class="botones-modal">
                 <button id="btn-addTarea">Añadir</button>
                 <button id="btn-cancelarTarea">Cancelar</button>
             </div>
         </div>
     </div>
 
-    <div id="modalNota" class="modal-oculto">
+    <div id="modalNota" class="modal modal-oculto">
         <div class="contenido-modal">
             <h3>Nueva nota</h3>
             <input type="text" id="inputNota" placeholder="Contenido de la nota">
 
-            <div class="botones-modal-tarea">
+            <div class="botones-modal">
                 <button id="btn-addNota">Añadir</button>
                 <button id="btn-cancelarNota">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalProyecto" class="modal modal-oculto">
+        <div class="contenido-modal">
+            <h3>NUEVO PROYECTO</h3>
+            <input type="text" id="inputNombreProyecto" placeholder="Nombre del proyecto">
+            <input type="date" id="inputFechaProyecto" placeholder="Fecha de entrega">
+
+            <div class="botones-modal">
+                <button id="btn-addProyecto">Añadir</button>
+                <button id="btn-cancelarProyecto">Cancelar</button>
             </div>
         </div>
     </div>

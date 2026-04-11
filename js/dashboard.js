@@ -144,12 +144,12 @@ btnAddNota.addEventListener('click', () => {
 
         listaNotas.appendChild(nuevaNota);
 
-        
+        modalNota.classList.add('modal-oculto');
     }
     else{
         alert('Debes rellenar el nombre de la nota');
     }
-    modalNota.classList.add('modal-oculto');
+    
 });
 
 btnCancelarNota.addEventListener('click', () => {
@@ -174,3 +174,55 @@ const frases = [
 const i = Math.floor(Math.random() * frases.length);
 const spanFrase = document.getElementById('fraseDelDia');
 spanFrase.textContent = frases[i];
+
+
+const listaProyectos = document.getElementById('listaProyectos');
+const btnCrearProyecto = document.getElementById('btn-crearProyecto');
+const modalProyecto = document.getElementById('modalProyecto');
+const btnAddProyecto = document.getElementById('btn-addProyecto');
+const btnCancelarProyecto = document.getElementById('btn-cancelarProyecto');
+
+btnCrearProyecto.addEventListener('click', () => {
+    modalProyecto.classList.remove('modal-oculto');
+})
+
+btnAddProyecto.addEventListener('click', () => {
+    const nombreProyecto = document.getElementById('inputNombreProyecto').value;
+    const fechaProyecto = document.getElementById('inputFechaProyecto').value;
+
+    if(nombreProyecto && fechaProyecto){
+        const separaFecha = fechaProyecto.split('-');
+        const dia = separaFecha[2];
+        const mesNum = separaFecha[1];
+
+        const meses = ["ENE", "FEB", "MAR", "ABR", "MAY", "JUN", "JUL", "AGO", "SEP", "OCT", "NOV", "DIC"];
+        const mes = meses[parseInt(mesNum) - 1];
+
+        const nuevoProyecto = document.createElement('li');
+        nuevoProyecto.classList.add('proyecto');
+
+        nuevoProyecto.innerHTML = `
+            <div class="proyecto-fecha">
+                <span class="dia">${dia}</span>
+                <span class="mes">${mes}</span>
+            </div>
+            <div class="proyecto-info">
+                <span class="proyecto-nombre">${nombreProyecto}</span>
+                <div class="barra-progreso">
+                    <input type="range" class="barra-progreso" min="0" max="100" value="0">
+                </div>
+            </div>
+            <button class="btn-eliminar-proy">&times;</button>
+        `;
+
+        listaProyectos.appendChild(nuevoProyecto);
+        modalProyecto.classList.add('modal-oculto');
+    }
+    else{
+        alert('Debes rellenar todos los campos.');
+    }
+});
+
+btnCancelarProyecto.addEventListener('click', () => {
+    modalProyecto.classList.add('modal-oculto');
+})
