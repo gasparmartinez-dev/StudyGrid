@@ -155,3 +155,22 @@ btnAddNota.addEventListener('click', () => {
 btnCancelarNota.addEventListener('click', () => {
     modalNota.classList.add('modal-oculto');
 });
+
+
+
+const frases = [
+    "Estudiar es ganar libertad. — Nelson Mandela",
+    "Saber es poder. — Francis Bacon",
+    "Si puedes soñarlo, puedes hacerlo. — Walt Disney",
+    "La disciplina vence al talento. — Proverbio Japonés",
+    "Hazlo ahora. A veces 'luego' es nunca.",
+    "Tu esfuerzo de hoy es tu éxito de mañana.",
+    "La mejor inversión es el conocimiento. — Benjamin Franklin",
+    "Dime y olvido, enséñame y recuerdo. — Benjamin Franklin",
+    "No te detengas hasta estar orgulloso.",
+    "Pequeños pasos, grandes metas. — Confucio"
+];
+
+const i = Math.floor(Math.random() * frases.length);
+const spanFrase = document.getElementById('fraseDelDia');
+spanFrase.textContent = frases[i];
