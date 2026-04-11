@@ -43,14 +43,14 @@ btnNuevaAsginatura.addEventListener('click', () => {
 });
 
 
-const modal = document.getElementById('modalTarea');
+const modalTarea = document.getElementById('modalTarea');
 const btnTarea = document.getElementById('btn-crearTarea');
 const btnAddTarea = document.getElementById('btn-addTarea');
 const btnCancelarTarea = document.getElementById('btn-cancelarTarea');
 const listaTareas = document.getElementById('listaTareas');
 
 btnTarea.addEventListener('click', () => {
-    modal.classList.remove('modal-oculto');
+    modalTarea.classList.remove('modal-oculto');
 });
 
 btnAddTarea.addEventListener('click', () => {
@@ -99,7 +99,7 @@ btnAddTarea.addEventListener('click', () => {
         listaTareas.appendChild(nuevo_li);
         
 
-        modal.classList.add('modal-oculto');
+        modalTarea.classList.add('modal-oculto');
     }
     else{
         alert('Debes rellenar los dos campos.');
@@ -107,5 +107,51 @@ btnAddTarea.addEventListener('click', () => {
 });
 
 btnCancelarTarea.addEventListener('click', () => {
-    modal.classList.add('modal-oculto');
+    modalTarea.classList.add('modal-oculto');
+});
+
+const btnNota = document.getElementById('btn-crearNota');
+const modalNota = document.getElementById('modalNota');
+const listaNotas = document.getElementById('listaNotas');
+const btnAddNota = document.getElementById('btn-addNota');
+const btnCancelarNota = document.getElementById('btn-cancelarNota');
+
+btnNota.addEventListener('click', () => {
+    modalNota.classList.remove('modal-oculto');
+})
+
+btnAddNota.addEventListener('click', () => {
+    const nombre = document.getElementById('inputNota');
+    if(nombre){
+        nuevaNota = document.createElement('li');
+        nuevaNota.classList.add('nota')
+
+        const spanNombre = document.createElement('span');
+        spanNombre.textContent = nombre.value;
+        spanNombre.classList.add('nombreNota');
+
+        const papelera = document.createElement('img');
+        papelera.src = "assets/icons/trash-negro.png";
+        papelera.alt = "papelera";
+        papelera.classList.add('papelera-nota');
+
+        papelera.addEventListener('click', () => {
+            nuevaNota.remove();
+        })
+
+        nuevaNota.appendChild(spanNombre);
+        nuevaNota.appendChild(papelera);
+
+        listaNotas.appendChild(nuevaNota);
+
+        
+    }
+    else{
+        alert('Debes rellenar el nombre de la nota');
+    }
+    modalNota.classList.add('modal-oculto');
+});
+
+btnCancelarNota.addEventListener('click', () => {
+    modalNota.classList.add('modal-oculto');
 });

@@ -65,9 +65,18 @@
             </div>
             <div class="resto caja">LISTA DE EXÁMENES</div>
             <div class="resto caja">TEMPORIZADOR</div>
-            <div class="resto caja">RACHA DE ESTUDIO</div>
-            <div class="resto caja">NOTAS + FRASE</div>
+            <div class="resto caja">RACHA DE ESTUDIO + FRASE</div>
+            <div class="resto caja">
+                <div class="cabecera">
+                    <h2>Mis notas</h2>
+                    <button class="btn-add" id="btn-crearNota">Añadir</button>
+                </div>
+                <ul id="listaNotas">
+                    <li class="nota"></li>
+                </ul>
+            </div>
         </div>
+        
 
     </main>
 
@@ -80,6 +89,18 @@
             <div class="botones-modal-tarea">
                 <button id="btn-addTarea">Añadir</button>
                 <button id="btn-cancelarTarea">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalNota" class="modal-oculto">
+        <div class="contenido-modal">
+            <h3>Nueva nota</h3>
+            <input type="text" id="inputNota" placeholder="Contenido de la nota">
+
+            <div class="botones-modal-tarea">
+                <button id="btn-addNota">Añadir</button>
+                <button id="btn-cancelarNota">Cancelar</button>
             </div>
         </div>
     </div>
