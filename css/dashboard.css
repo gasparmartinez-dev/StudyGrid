@@ -279,6 +279,13 @@ h2{
     display: flex;
     justify-content: space-between;
 }
+.fechaInfo{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    width: 70%; 
+}
+
 .proyecto-fecha{
     display: flex;
     flex-direction: column;
@@ -289,7 +296,23 @@ h2{
     font-weight: 800;
     border: 1px solid;
     border-radius: 20%;
+    background:rgb(172, 172, 172)
+}
 
+.proyecto-info{
+    width: 100%;
+}
+
+.barra-progreso{
+    width: 100%;
+}
+.barra{
+    width:100%;
+}
+
+.btn-eliminar-proy{
+    border-color: transparent;
+    background: transparent;
 }
 
 #RachaFrase{

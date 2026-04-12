@@ -202,18 +202,27 @@ btnAddProyecto.addEventListener('click', () => {
         nuevoProyecto.classList.add('proyecto');
 
         nuevoProyecto.innerHTML = `
-            <div class="proyecto-fecha">
-                <span class="dia">${dia}</span>
-                <span class="mes">${mes}</span>
-            </div>
-            <div class="proyecto-info">
-                <span class="proyecto-nombre">${nombreProyecto}</span>
-                <div class="barra-progreso">
-                    <input type="range" class="barra-progreso" min="0" max="100" value="0">
+            <div class="fechaInfo">
+                <div class="proyecto-fecha">
+                    <span class="dia">${dia}</span>
+                    <span class="mes">${mes}</span>
+                </div>
+                <div class="proyecto-info">
+                    <span class="proyecto-nombre">${nombreProyecto}</span>
+                    <div class="barra-progreso">
+                        <input type="range" class="barra" min="0" max="100" value="0">
+                    </div>
                 </div>
             </div>
-            <button class="btn-eliminar-proy">&times;</button>
+            <button class="btn-eliminar-proy">
+                <img src="assets/icons/trash-negro.png" alt="Eliminar" class="icono-trash">
+            </button>
         `;
+
+        const btnEliminar = nuevoProyecto.querySelector('.btn-eliminar-proy');
+        btnEliminar.addEventListener('click', () => {
+            nuevoProyecto.remove();
+        });
 
         listaProyectos.appendChild(nuevoProyecto);
         modalProyecto.classList.add('modal-oculto');
